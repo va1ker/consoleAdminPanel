@@ -1,0 +1,42 @@
+while (true)
+{
+    Found:
+    Console.WriteLine("-Регистрация-");
+    Console.Write("Введите логин: ");
+    string log = Console.ReadLine();
+    Console.Write("Введите пароль: ");
+    string pass = Console.ReadLine();
+
+
+    Console.WriteLine("-Авторизация-");
+    Console.Write("Введите логин: ");
+    string log2 = Console.ReadLine();
+    Console.Write("Введите пароль:");
+    string pass2 = Console.ReadLine();
+
+
+    if (log == log2 && pass == pass2)
+    {
+        Console.WriteLine("вход успешен");
+    }
+    else
+    {
+        Console.WriteLine("Ошибка");
+        goto Found;
+    }
+
+    Console.WriteLine("1. Вернуться к регистрации");
+    string x = Console.ReadLine();
+    if (x == "1")
+    {
+        Console.WriteLine("вход успешен");
+        goto Found;
+    }
+    else
+    {
+        Console.WriteLine("Ошибка");
+        goto Found;
+    }
+
+
+}

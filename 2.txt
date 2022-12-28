@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+
+namespace nixer
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<string, string> people = new Dictionary<string, string>();
+            while (true)
+            {
+                Console.WriteLine("выберете операцию\n1 - registration\n2 - login");
+                int x = Convert.ToInt32(Console.ReadLine());
+                string userimput, userimput1;
+                switch (x){
+                    case 1:
+                        Console.WriteLine("введите логин");
+                        userimput = Console.ReadLine();
+                        Console.WriteLine("введите пароль");
+                        userimput1 = Console.ReadLine();
+                        people.Add(userimput, userimput1);
+                        Console.WriteLine("вы успешло зарешестрированы");
+                        break;
+
+                    case 2:
+                        Console.WriteLine("введите логин");
+                        userimput = Console.ReadLine();
+                        foreach (var item in people){
+                            if (userimput == item.Key)
+                            {
+                                Console.WriteLine("введите пароль");
+                                userimput = Console.ReadLine();
+                                if (userimput == item.Value)
+                                {
+                                    Console.WriteLine("вы успешно вошли");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("неверный пароль");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("неверный логин");
+                            }
+
+                        }
+                        break;
+
+                }
+            }
+
+        }
+    }
+}
